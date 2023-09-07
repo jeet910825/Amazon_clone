@@ -1,0 +1,10 @@
+.cartProducts{
+    display: flex;
+    flex-direction:column;
+    margin: 15px;
+    border-bottom: 1px solid black;
+}
+.cartProducts > img{
+    width: 10rem;
+    height: 10rem;
+}

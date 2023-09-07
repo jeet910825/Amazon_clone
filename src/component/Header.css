@@ -1,0 +1,91 @@
+:root{
+    --background-color: #0f1111;
+    --color:#ffffff
+}
+
+.header{
+    padding:0 20px;
+    height: 60px;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:var(--color)
+}
+.logo{
+    height: 50px;
+    width: 115px;
+    margin: 0 10px 0 0 ;
+    background-image: url("../img/amazon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    border: 1px solid var(--background-color);
+}
+.logo:hover{
+    border: 1px solid white;
+    cursor: pointer;
+}
+.header_search{
+    display: flex;
+    width: 600px;
+    border-radius: 10px;
+    padding: 0 10px;
+    flex: 1;
+
+}
+.header_searchInput{
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.header_searchInput::placeholder{
+    padding-left: 10px;
+}
+.header_search button{
+    width: 50px;
+    border:none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+.header_nav{
+    display: flex;
+    justify-content: space-evenly;
+    flex: 0.5;
+
+}
+.header_option{
+   
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid var(--background-color);
+}
+.header_option span{
+    display: block;
+}
+.headerOptionLineOne{
+    font-size: 0.8rem;
+}
+.headerOptionLineTwo{
+    white-space: nowrap;
+}
+.header_option:hover{
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.shopingCart_img{
+    border: 1px solid var(--background-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.shopingCart_img:hover{
+    cursor: pointer;
+    border:1px solid white;
+}
