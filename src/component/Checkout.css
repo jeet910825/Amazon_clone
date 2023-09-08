@@ -16,8 +16,8 @@
 }
 @media  screen and (max-width:768px) {
     .subtotal_section{
-        width:150px;
-        height: 80px;
+        width:11rem;
+        height: 8rem;
     }
 }
 .shopingCart{
