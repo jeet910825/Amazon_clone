@@ -23,5 +23,15 @@
 }
 .product_detail >button{
     margin:25px 0;
-    width: 100px;
+    width: 25%;
+    height: 30px;
+    background-color: orange;
+    border: 0.5px solid black;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+.price{
+    font-size: x-large;
+    padding-top: 15px;
 }

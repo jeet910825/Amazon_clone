@@ -1,15 +1,24 @@
 import React from 'react';
 import './ShopingCartItems.css'
+import { useStateValue } from './State Provider/stateProvider';
 
-function ShopingCartItem() {
+function ShopingCartItem({id,title,imag,amount}) {
+  const [state,dispatch]=useStateValue();
+  const removeItemFormBasket=()=>{
+    dispatch({
+      type:'REMOVE_FROM_BASKET',
+      id:id
+    })
+  }
   return (
     <div className='cartProducts'>
       <div className='cartProduct_info'>
-        <p>name of the product</p>
+        <p>{title}</p>
       </div>
-      <img src='https://th.bing.com/th/id/OIP.bpJTixcJ9eRwEFjKsApJ8QHaEo?pid=ImgDet&rs=1' alt='imgae' />
+      <img src={imag} alt='imgae' />
       <div className='cartProduct_price'>
-        <h3>90 $</h3>
+        <h3>$ {amount}</h3>
+        <button className='removeFromCart' onClick={removeItemFormBasket}>remove item</button>
       </div>
     </div>
   )
