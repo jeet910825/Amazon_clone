@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+
 function Login() {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
+  const history = useNavigate();
   function setEmail(e) {
     setUser((p) => {
       return {
@@ -23,6 +25,31 @@ function Login() {
       };
     });
   }
+  async function register(e) {
+    e.preventDefault();
+    await auth
+      .createUserWithEmailAndPassword(user.email, user.password)
+      .then(async (auth) => {
+        if (await auth) {
+          history("/");
+        }
+      })
+      .catch((error) => alert(error.message));
+  }
+  async function signIn(e) {
+    e.preventDefault();
+     auth
+      .signInWithEmailAndPassword(user.email, user.password)
+      .then(async (e) => {
+        if (e) {
+          await history("/");
+        }
+      })
+      .catch((error) => {
+        alert(error.message)
+      });
+  }
+
   return (
     <div className="loginPage">
       <Link to="/">
@@ -37,19 +64,20 @@ function Login() {
 
       <div className="login_container">
         <h1>Sign in</h1>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
+        <form>
           <h5>E-mail</h5>
           <input type="text" value={user.email} onChange={setEmail} />
           <h5>Password</h5>
           <input type="password" value={user.password} onChange={setPassword} />
-          <button>Sign In</button>
+          <button onClick={signIn}>Sign In</button>
           <div className="registerCondition">
-            <p>Read the term and conditions before registration to the fake amazon clone</p>
-            <button className="registration">Create an account</button>
+            <p>
+              Read the term and conditions before registration to the fake
+              amazon clone
+            </p>
+            <button className="registration" onClick={register}>
+              Create an account
+            </button>
           </div>
         </form>
       </div>

@@ -2,9 +2,11 @@ import React from 'react'
 import './Checkout.css'
 import ShopingCartItem from './ShopingCartItem'
 import { useStateValue } from './State Provider/stateProvider'
+import { useNavigate } from 'react-router-dom'
 
 function Checkout() {
-  const [state,dispatch]=useStateValue();
+  const history = useNavigate();
+  const [state]=useStateValue();
   console.log(state.basket)
   return (
     <div className='checkout'>
@@ -18,6 +20,9 @@ function Checkout() {
         <div className='subtotal'>
           <p>Sub total amout : </p>
           <p><b>$ {state.basket?.reduce((acc,cur)=>acc+cur.amount,0)} </b></p>
+          <button className='checkout_button' onClick={()=>{
+            history('/payment')
+          }}>buy</button>
         </div>
       </div>
     </div>
