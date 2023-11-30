@@ -1,7 +1,7 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from './State Provider/stateProvider'
-import { reducer } from './State Provider/reducer'
+
 
 function Product({id,title,imag,amount}) {
   const [state,dispatch]=useStateValue();

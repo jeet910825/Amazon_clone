@@ -2,16 +2,18 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./State Provider/stateProvider";
 import { auth } from "../firebase";
 
 function Header() {
   const [{ basket, users }] = useStateValue();
+  const history = useNavigate()
 
   const handleLogin = () => {
     if (users) {
       auth.signOut();
+      history("/")
     }
   };
   function findName() {
@@ -22,14 +24,14 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-         <img src={require("../img/amazon.png")} className="logo" alt="amazon" />
+        <img src={require("../img/amazon.png")} className="logo" alt="amazon" />
       </Link>
 
       <div className="header_search">
         <input
           className="header_searchInput"
           type="text"
-          placeholder="Search of item"
+          placeholder="Search"
         ></input>
         <button>
           <SearchIcon />
@@ -58,10 +60,13 @@ function Header() {
             </Link>
           </span>
         </div>
-        <div className="header_option">
-          <span className="headerOptionLineOne">Return</span>
-          <span className="headerOptionLineTwo">& Orders</span>
-        </div>
+        <Link to={`${!users?"/login":"/orders"}`} className="link">
+          <div className="header_option">
+            <span className="headerOptionLineOne">Return</span>
+            <span className="headerOptionLineTwo">& Orders</span>
+          </div>
+        </Link>
+
         <div className="header_option">
           <span className="headerOptionLineOne">Your</span>
           <span className="headerOptionLineTwo">Prime</span>

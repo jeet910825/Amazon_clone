@@ -1,27 +1,26 @@
 .cartProducts{
     display: flex;
-    flex-direction:column;
-    margin: 15px;
-    padding: 15px;
-    border-bottom: 1px solid #000000;
+    justify-content: flex-start;
     
+    margin: 10px;
 }
 .cartProducts > img{
-    width: 10rem;
-    height: 10rem;
-    margin-top: 20px;
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
 }
 .cartProduct_price{
-    width:50%;
-    margin: 10px 0 0 0;
     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.cartProduct_price>button{
-    width: 40%;
-    height: 30px;
-    margin: 10px 0;
-    background-color: orange;
-    border:0.4px solid black;
+.removeFromCart {
+    height: 1.5rem;
+    min-width: max-content;
+    padding:2.5px 5px;
+    background-color: #f0c14b;
+    border:0.5px solid black;
+    border-radius: 3px;
     cursor: pointer;
-    min-width: fit-content;
 }
