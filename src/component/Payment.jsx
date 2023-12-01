@@ -24,7 +24,7 @@ function Payment() {
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
-        url: `http://localhost:3005/payments/create?total=${getBasketTotal(basket)}`,
+        url: `https://amazonapi-production.up.railway.app/payments/create?total=${getBasketTotal(basket)}`,
       });
       setClientSecret(response.data.clientSecret);
     };
