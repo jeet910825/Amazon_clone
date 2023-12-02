@@ -23,8 +23,8 @@ function Header() {
 
   return (
     <div className="header">
-      <Link to="/">
-        <img src={require("../img/amazon.png")} className="logo" alt="amazon" />
+      <Link to="/" className="link">
+        <h1 className="brand-name">Amaz</h1>
       </Link>
 
       <div className="header_search">
