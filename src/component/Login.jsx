@@ -44,6 +44,7 @@ function Login() {
       .then(async (e) => {
         if (e) {
           await history("/");
+          alert("login successfully")
         }
       })
       .catch((error) => {
