@@ -21,7 +21,7 @@ function Checkout() {
           <p >Subtotal ({state.basket.length} items)</p>
           <p><b style={{fontSize:"larger"}}>$ {state.basket?.reduce((acc,cur)=>acc+cur.amount,0)} </b></p>
           <button className='checkout_button' style={{padding:"2px"}} onClick={()=>{
-            history('/payment')
+            history(state.users?.email ?'/payment':"/login")
           }}>Proceed to checkout</button>
         </div>
       </div>

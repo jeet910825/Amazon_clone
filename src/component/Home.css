@@ -12,3 +12,19 @@
     z-index: 1;
     flex-wrap: nowrap;
 }
+.carousel{
+    position: relative;
+    margin-bottom: -150px;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    position: relative;
+    bottom: 50px;
+}
+
+.carousel-indicators{
+    display: none;
+}
+.banner-image{
+    width: 100%;
+    height: 60vh;
+}

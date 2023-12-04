@@ -29,7 +29,10 @@ function Payment() {
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
-  }, [basket]);
+    if(!users?.email){
+      navigator("/")
+    }
+  }, [basket,users]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

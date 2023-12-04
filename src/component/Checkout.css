@@ -5,26 +5,28 @@
     
 }
 .subtotal_section{
-    width: 300px;
-    padding: 5px;
-    height: 100px;
+    height: fit-content;
+    flex: 0.3;
+    padding: 10px;
+    flex-grow: 2;
+    max-width: 300px;
     box-shadow: 0 0 1px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(234, 237, 237);
 }
 .subtotal{
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;  
 }
-@media  screen and (max-width:768px) {
-    .subtotal_section{
-        width:11rem;
-        height: 8rem;
-    }
+p{
+    margin: 0;
 }
 .shopingCart{
-    width: 100%;
+    flex: 0.7;
+    flex-grow: 5;
     margin: 0 15px 0 0;
     box-shadow: 0 0 2px black;
 }
@@ -33,12 +35,13 @@
     margin-left: 10px;
 }
 .checkout_button{
-    width: 100%;
+    width: max-content;
     height: 2rem;
     background-color: #f0c14b;
     border: 0.5px solid black;
     border-radius: 5px;
     cursor: pointer;
+    min-height: fit-content;
 }
 .user-details{
     padding: 10px;

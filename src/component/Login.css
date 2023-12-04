@@ -9,11 +9,11 @@
     height: 4rem;
 }
 .login_container{
-    width:30%;
+    width:40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 3px black;
     padding: 20px;
     padding-bottom: 30px;
 }
@@ -50,6 +50,6 @@
 }
 @media screen and (max-width:720px){
     .login_container{
-        width: 50%;
+        width: 70%;
     }
 }

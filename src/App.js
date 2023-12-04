@@ -9,8 +9,9 @@ import { useStateValue } from "./component/State Provider/stateProvider";
 import Payment from "./component/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import Order from "./component/Order.jsx";
+
 import Orders from "./component/Orders.jsx";
+import "./App.css"
 
 const promise = loadStripe(
   "pk_test_51N9ozLSCTLfVKXhHW2Ar31rbcfGrvFVwDQutCoKzGXHT4I8fucWCr2oUAw5KNfmPT4sBsoAKMfQHpTErGCMUdzgp00CsnntGTy"

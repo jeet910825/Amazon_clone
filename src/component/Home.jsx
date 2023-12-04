@@ -1,12 +1,35 @@
 import React from 'react';
 import './Home.css';
 import Product from './Product';
+import Carousel from "react-bootstrap/Carousel";
+import image1 from "../img/1.jpg";
+import image2 from "../img/2.jpg";
+import image3 from "../img/3.jpg";
+import image4 from "../img/4.jpg";
+import image5 from "../img/5.jpg";
+
 
 function Home() {
   return (
     <div>
       <div className='home_container'>
-        <img  className="home_image" src={require("../img/banner.jpg")} alt='banner' />
+      <Carousel className="carousel">
+        <Carousel.Item interval={2500}>
+          <img src={image1} alt="image" className="banner-image" />
+        </Carousel.Item>
+        <Carousel.Item interval={2500}>
+          <img src={image2} alt="image" className="banner-image" />
+        </Carousel.Item>
+        <Carousel.Item interval={2500}>
+          <img src={image3} alt="image" className="banner-image" />
+        </Carousel.Item>
+        <Carousel.Item interval={2500}>
+          <img src={image4} alt="image" className="banner-image" />
+        </Carousel.Item>
+        <Carousel.Item interval>
+          <img src={image5} alt="image" className="banner-image" />
+        </Carousel.Item>
+      </Carousel>
       </div>
       <div className='home_row'>
         <Product id="123" title="iQOO Neo 7 Pro 5G (Dark Storm, 8GB RAM, 128GB Storage) | Snapdragon® 8+ Gen 1 | Independent Gaming Chip | Flagship 50MP OIS Camera | AG Glass Design" imag='https://m.media-amazon.com/images/I/611rQWZa5rL._SX679_.jpg' amount={19999}/>

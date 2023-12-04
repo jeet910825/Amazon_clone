@@ -1,112 +1,150 @@
-:root{
-    --background-color: #0f1111;
-    --color:#ffffff
+:root {
+    --navbackground: #0f1111;
+    --navTextColor: #ffffff;
+    --background-button: #e6e6e6;
+    --background-search: #ffbf00;
+    --background-search-hover: #ff8f00;
+
+}
+#root{
+    width: 100%;  
+    min-width: fit-content;
 }
 
-.header{
-    position:sticky;
+.navbar-container{
+    position: sticky;
     top: 0;
-    right: 0;
     left: 0;
-    z-index: 10;
-    padding:0 20px;
-    height: 60px;
-    background-color: var(--background-color);
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbackground);
+    color: var(--navTextColor);
+    z-index: 100;
+    flex-wrap: nowrap;
+    padding: 0 10px;
+}
+
+.brand-name>h1 {
+    font-weight: bolder;
+}
+
+.nav-first-section {
+    position: static;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color:var(--color);
- 
 }
-.logo{
-    width: 100px;
-    margin-right: 25px;
-    height: auto;
-    align-self: center;
-    justify-content: center;
-}
-@media  screen and ( max-width : 600px ) {
-    .header{
-        padding: 0;
-    }
-    .logo{
-        width: 70px;
-        margin: 5px;
-    }
 
-    .header_nav{
-        width: 400px;
-        font-size: 0.8rem;
-    }
-    .outer{
-        font-size: 0.8rem;
-    }
-    
+.brand-name {
+    margin-right: 10px;
 }
-.header_search{
+
+.address-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+.nav-top-row {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.nav-bottom-row {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nav-middle-section {
+    position: static;
     width: 100%;
-    border: none;
+}
+
+.nav-middle-section-form {
+    display: flex;
+    align-items: center;
     margin: 0 10px;
 }
-.header_searchInput{
-    width: 100%;
-    min-width: 35px;
-    height: 35px;
+
+.nav-middle-section-form>select {
+    width: 42px;
+    height: 40px;
     border: none;
+    background-color: var(--background-button);
+    cursor: pointer;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-.header_search > button{
+
+.nav-middle-section-form>select:focus {
+    outline-color: orange;
+    outline-style: solid;
+    outline-width: 3px;
+    z-index: 1;
+}
+
+.nav-middle-section-form>input,
+.nav-middle-section-form>button {
+    border: none;
+    height: 40px;
+    outline: none;
+}
+
+.nav-middle-section-form>button {
     width: 40px;
     display: flex;
-    margin-right: 10px;
-    justify-content: center;
     align-items: center;
-    border: none;
-    background-color: orange;
+    justify-content: center;
+    background-color: var(--background-search);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-.header_nav{
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
+.nav-middle-section-form>button:hover {
+    background-color: var(--background-search-hover);
 }
-.header_option{
+
+.nav-middle-section-form>input {
+    flex: 1;
+}
+
+.nav-end-section {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #0f1111;
+    gap: 10px;
+    position: static;
+}
+
+.nav-link {
+    border: 0.5px solid var(--navbackground);
     border-radius: 3px;
     padding: 5px;
-    cursor: pointer;
-}
-.header_option:hover{
-    border:1px solid white;
-}
-.link{
-    color: white;
-    text-decoration: none;
-}
-.headerOptionLineTwo{
-    white-space: nowrap;
-}
-.shopingCart_img{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+.cart{
     align-items: center;
-    padding: 5px 10px;
-    border: 1px solid #0f1111;
-    border-radius: 3px;
+    padding: 0 10px;
 }
-.shopingCart_img:hover{
-    cursor: pointer;
-    border:1px solid white;
+
+.address-container:hover,
+.nav-link:hover {
+    border-color: var(--navTextColor);
 }
-.brand-name{
-    color: white;
+a{
     text-decoration: none;
+    color: var(--navTextColor);
+}
+
+input::placeholder{
+    padding-left: 10px;
 }
