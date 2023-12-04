@@ -15,6 +15,7 @@ function Product({id,title,imag,amount}) {
         amount:amount
       }
     })
+    alert("Product added")
   }
   return (
     <div className='product_detail'>

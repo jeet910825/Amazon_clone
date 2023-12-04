@@ -6,7 +6,7 @@ import ShopingCartItem from "./ShopingCartItem";
 import { Link, useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 import axios from "axios";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CardElement, useElements, useStripe , PaymentElement } from "@stripe/react-stripe-js";
 function Payment() {
   const [{ basket, users }, dispatch] = useStateValue();
   const navigator = useNavigate();

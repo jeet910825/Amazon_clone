@@ -24,6 +24,7 @@
     z-index: 100;
     flex-wrap: nowrap;
     padding: 0 10px;
+    height: 60px;
 }
 
 .brand-name>h1 {

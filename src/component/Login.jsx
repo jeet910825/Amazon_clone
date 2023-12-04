@@ -31,6 +31,7 @@ function Login() {
       .createUserWithEmailAndPassword(user.email, user.password)
       .then(async (auth) => {
         if (await auth) {
+          alert("registered successfully")
           history("/");
         }
       })
