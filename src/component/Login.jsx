@@ -65,9 +65,9 @@ function Login() {
       <div className="login_container">
         <h1>Sign in</h1>
         <form>
-          <h5>E-mail</h5>
+          <h5 className="form-name">Email</h5>
           <input type="text" value={user.email} onChange={setEmail} />
-          <h5>Password</h5>
+          <h5 className="form-name">Password</h5>
           <input type="password" value={user.password} onChange={setPassword} />
           <button onClick={signIn}>Sign In</button>
           <div className="registerCondition">
