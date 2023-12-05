@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.css";
 import ShopingCartItem from "./ShopingCartItem";
 import { useStateValue } from "./State Provider/stateProvider";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Checkout() {
   const history = useNavigate();
   const [state] = useStateValue();
+ 
   return (
     <div className="checkout">
       <div className="shopingCart">

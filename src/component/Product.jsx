@@ -9,7 +9,7 @@ function Product({id,title,imag,amount}) {
     dispatch({
       type:'ADD_TO_BASKET',
       item:{
-        id:id,
+        id:state.basket?.length || 0,
         title:title,
         imag:imag,
         amount:amount

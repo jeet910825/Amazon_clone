@@ -10,7 +10,6 @@ export const reducer = (state, action) => {
         basket: [...state.basket, action.item],
       };
     case "REMOVE_FROM_BASKET":
-      
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.id
       );
@@ -18,14 +17,14 @@ export const reducer = (state, action) => {
       if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
-        console.warn("cant remove product");
+        console.warn("Can't remove product: item not found in the basket.");
       }
       return {
         ...state,
         basket: newBasket,
       };
     case "EMPTY_BASKET":
-      return {...state,basket:[]}
+      return { ...state, basket: [] };
 
     case "SET_USER":
       return {
