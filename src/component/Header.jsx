@@ -43,7 +43,7 @@ function Header() {
         </div>
       </div>
       <div className="nav-middle-section">
-        <form className="nav-middle-section-form">
+        <form className="nav-middle-section-form" onSubmit={(e)=>{e.preventDefault()}}>
           <select name="All">
             <option defaultValue={"all"}>All Category </option>
             <option value={"mobile"}>Mobile</option>
