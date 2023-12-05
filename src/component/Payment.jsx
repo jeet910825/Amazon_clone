@@ -29,7 +29,7 @@ function Payment() {
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
-    if(!users?.email){
+    if(!users?.email || !basket?.length){
       navigator("/")
     }
   }, [basket,users]);
