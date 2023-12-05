@@ -56,3 +56,9 @@
 .form-name{
     margin-bottom: 0;
 }
+.singIn:active{
+background-color: orange;
+}
+.registration:active{
+    background-color: darkgray;
+}

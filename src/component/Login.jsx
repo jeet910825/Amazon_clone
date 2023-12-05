@@ -43,7 +43,7 @@ function Login() {
       .signInWithEmailAndPassword(user.email, user.password)
       .then(async (e) => {
         if (e) {
-          await history("/");
+          history("/");
           alert("login successfully")
         }
       })
@@ -71,7 +71,7 @@ function Login() {
           <input type="text" value={user.email} onChange={setEmail} />
           <h5 className="form-name">Password</h5>
           <input type="password" value={user.password} onChange={setPassword} />
-          <button onClick={signIn}>Sign In</button>
+          <button className="singIn" onClick={signIn}>Sign In</button>
           <div className="registerCondition">
             <p>
               Read the term and conditions before registration to the fake

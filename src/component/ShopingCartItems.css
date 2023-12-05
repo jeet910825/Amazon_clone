@@ -27,3 +27,6 @@
     justify-content: center;
     cursor: pointer;
 }
+.removeFromCart:active{
+    background-color: orange;
+}

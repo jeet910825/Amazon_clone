@@ -47,3 +47,6 @@
 input::placeholder{
     padding-left: 10px;
 }
+.addToCart:active{
+background-color: orange;
+}
