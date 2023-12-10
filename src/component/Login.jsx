@@ -35,7 +35,11 @@ function Login() {
           history("/");
         }
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        if(user.email.length===0 || user.password.length===0)
+        alert("Please enter email and password for creating an account");
+        else alert(error)
+      });
   }
   async function signIn(e) {
     e.preventDefault();
@@ -74,11 +78,10 @@ function Login() {
           <button className="singIn" onClick={signIn}>Sign In</button>
           <div className="registerCondition">
             <p>
-              Read the term and conditions before registration to the fake
-              amazon clone
+              Please enter email and password above for creating an account
             </p>
             <button className="registration" onClick={register}>
-              Create an account
+              Create an account.
             </button>
           </div>
         </form>
